@@ -1,9 +1,13 @@
 import os
 import subprocess
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # --- CONFIGURATION ---
-# We get the stream key from Railway's environment variables
+# We get the stream key from environment variables (loaded from .env or Railway)
 stream_key = os.environ.get("STREAM_KEY")
 if not stream_key:
     print("Error: STREAM_KEY not found in environment variables.")
